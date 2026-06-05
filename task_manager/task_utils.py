@@ -56,12 +56,9 @@ def view_pending_tasks(tasks):
 
 
 def calculate_progress(tasks):
-    """Display the completed task progress."""
+    """Calculate and return the completed task progress as a float."""
     if not tasks:
-        print("No tasks yet!")
-        return 0
+        return 0.0
     total = len(tasks)
     completed = sum(1 for task in tasks if task["completed"])
-    percent = int((completed / total) * 100)
-    print(f"Progress: {completed}/{total} tasks completed ({percent}%)")
-    return percent
+    return (completed / total) * 100.0

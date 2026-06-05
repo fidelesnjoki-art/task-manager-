@@ -46,7 +46,11 @@ def main():
             view_pending_tasks(tasks)
 
         elif choice == "4":
-            calculate_progress(tasks)
+            if not tasks:
+                print("No tasks yet!")
+            else:
+                progress = calculate_progress(tasks)
+                print(progress)
 
         elif choice == "5":
             print("Goodbye!")
